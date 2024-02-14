@@ -1,0 +1,83 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+iris:
+  type: pandas.CSVDataset
+  filepath: data/iris.csv
+x:
+  type: pickle.PickleDataset
+  filepath:  data/02_intermediate/x.pkl
+  backend: pickle
+
+y:
+  type: pickle.PickleDataset
+  filepath:  data/02_intermediate/y.pkl
+  backend: pickle
+
+x_train:
+  type: pickle.PickleDataset
+  filepath:  data/02_intermediate/x_train.pkl
+y_train:
+  type: pickle.PickleDataset
+  filepath:  data/02_intermediate/y_train.pkl 
+x_test:
+  type: pickle.PickleDataset
+  filepath:  data/02_intermediate/x_test.pkl
+y_test:
+  type: pickle.PickleDataset
+  filepath:  data/02_intermediate/y_test.pkl   
+model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/model.pkl
+  backend: pickle
+  version: true
+
+confusion_matrix:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/output_plot.png
+
+  # Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+# iris_data:
+#   type: pandas.CSVDataSet
+#   filepath: data/01_raw/iris.csv
+
+# X:
+#   type: pickle.PickleDataSet
+#   filepath: data/02_intermediate/X.pkl
+#   backend: pickle
+
+# Y:
+#   type: pickle.PickleDataSet
+#   filepath: data/02_intermediate/Y.pkl
+#   backend: pickle
+
+# X_train:
+#   type: pickle.PickleDataSet
+#   filepath: data/02_intermediate/X_train.pkl
+#   backend: pickle
+
+# y_train:
+#   type: pickle.PickleDataSet
+#   filepath: data/02_intermediate/y_train.pkl
+#   backend: pickle
+
+# X_test:
+#   type: pickle.PickleDataSet
+#   filepath: data/02_intermediate/X_test.pkl
+#   backend: pickle
+
+# y_test:
+#   type: pickle.PickleDataSet
+#   filepath: data/02_intermediate/y_test.pkl
+#   backend: pickle
+
+  # type: matplotlib.MatplotlibWriter
+  # filepath: data/08_reporting/confusion_matrix.png
+  # save_args:
+  #   format: png

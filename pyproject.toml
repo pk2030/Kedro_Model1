@@ -1,0 +1,31 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iris_project"
+readme = "README.md"
+dynamic = [ "dependencies", "version",]
+
+[project.scripts]
+iris-project = "iris_project.__main__:main"
+
+[tool.kedro]
+package_name = "iris_project"
+project_name = "iris_project"
+kedro_init_version = "0.19.2"
+tools = [ "Data Structure",]
+example_pipeline = "False"
+source_dir = "src"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.dependencies]
+file = "requirements.txt"
+
+[tool.setuptools.dynamic.version]
+attr = "iris_project.__version__"
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false
